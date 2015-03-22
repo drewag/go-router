@@ -10,8 +10,10 @@ import (
 // Constants
 
 const (
-	MethodPost = "POST"
-	MethodGet  = "GET"
+	MethodPost   = "POST"
+	MethodGet    = "GET"
+	MethodPut    = "PUT"
+	MethodDelete = "DELETE"
 )
 
 // Types
