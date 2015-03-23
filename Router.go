@@ -83,7 +83,7 @@ func (self Router) handleAPIRoot(writer http.ResponseWriter, request *http.Reque
 func (self Router) HandleRequest(writer http.ResponseWriter, request *http.Request) {
 	path := request.URL.Path
 
-	fmt.Printf("Handling request from %s...", path)
+	fmt.Printf("Handling request from [%s] %s...", request.Method, path)
 	writer.Header().Set("Content-Type", "application/JSON")
 
 	for api, routes := range self {
