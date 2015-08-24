@@ -85,6 +85,9 @@ func (self Router) HandleRequest(writer http.ResponseWriter, request *http.Reque
 
 	fmt.Printf("Handling request from [%s] %s...", request.Method, path)
 	writer.Header().Set("Content-Type", "application/JSON")
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+	writer.Header().Set("Access-Control-Allow-Methods", "POST, PUT, GET, HEAD, DELETE")
+	writer.Header().Set("Access-Control-Allow-Headers", request.Header.Get("Access-Control-Request-Headers"))
 
 	for api, routes := range self {
 		apiPath := "/" + api
