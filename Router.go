@@ -61,7 +61,7 @@ func BaseURLFromRequest(r *http.Request) string {
 
 	u.Path = ""
 
-	return u.String()
+	return strings.Split(u.String(), "?")[0]
 }
 
 // Private Methods
